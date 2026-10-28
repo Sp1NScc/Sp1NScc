@@ -1,0 +1,134 @@
+/* ------------------------------------------------------------------
+   Opening / motion primitives
+   ------------------------------------------------------------------ */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: grid;
+  place-items: center;
+  background: #050506;
+  animation: intro-fallback 0.8s 4.2s forwards;
+}
+
+.intro__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 24px;
+  text-align: center;
+}
+
+.intro__mark {
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  color: var(--dim);
+}
+
+.intro__name {
+  font-size: clamp(54px, 9vw, 132px);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  color: var(--text);
+}
+
+.intro__meta {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--dim);
+}
+
+.intro__line {
+  display: block;
+  width: min(280px, 40vw);
+  height: 1px;
+  margin-top: 10px;
+  background: var(--red);
+}
+
+@keyframes intro-fallback {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro {
+    display: none;
+  }
+}
+
+/* hero title line masks -------------------------------------------- */
+.hero__line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.hero__line > span {
+  display: block;
+  transform-origin: left top;
+  will-change: transform;
+}
+
+/* big English chapter words ---------------------------------------- */
+.sec-head {
+  position: relative;
+}
+
+.sec-head__ghost {
+  position: absolute;
+  top: -0.48em;
+  left: -0.04em;
+  z-index: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(60px, 9vw, 150px);
+  font-weight: 600;
+  line-height: 0.8;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+  color: rgba(236, 233, 227, 0.02);
+  -webkit-text-stroke: 1px rgba(236, 233, 227, 0.16);
+  pointer-events: none;
+  user-select: none;
+}
+
+.sec-head__meta,
+.sec-head__body {
+  position: relative;
+  z-index: 1;
+}
+
+/* contact ghost ---------------------------------------------------- */
+.contact__inner {
+  position: relative;
+}
+
+.contact__ghost {
+  position: absolute;
+  top: -0.12em;
+  left: -0.03em;
+  z-index: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(70px, 10vw, 170px);
+  font-weight: 600;
+  line-height: 0.8;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+  color: rgba(236, 233, 227, 0.02);
+  -webkit-text-stroke: 1px rgba(236, 233, 227, 0.14);
+  pointer-events: none;
+  user-select: none;
+}
+
+.contact__top,
+.contact__main,
+.contact__grid,
+.contact__foot {
+  position: relative;
+  z-index: 1;
+}

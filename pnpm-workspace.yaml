@@ -1,0 +1,8 @@
+minimumReleaseAgeExclude:
+  - '@rollup/wasm-node@4.65.1'
+
+onlyBuiltDependencies:
+  - esbuild
+
+overrides:
+  rollup: npm:@rollup/wasm-node@^4.65.1
